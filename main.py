@@ -1,24 +1,24 @@
 import telebot
-bot = telebot.TeleBot('6823637731:AAGBk7Ca_UVnMIHEu3O69xDG7DmK4DiFMo4')
+bot = telebot.TeleBot('6679093324:AAGSrfgrPB_-Lq1uDfAINlBEcYKEkB3KkIs')
 
 @bot.message_handler(commands=['start'])
 def main(message):
-    bot.send_message(message.chat.id, 'ПРИВЕТ! \nдля начала работы оплатите бота)')
+    bot.send_message(message.chat.id, '*Привет. \nНачнём общение!*', parse_mode='Markdown')
     
-@bot.message_handler(commands=['pay'])
+@bot.message_handler(commands=['deal'])
 def main(message):
-    bot.send_message(message.chat.id, '-500$ \nвы успешно оплатили бота!')
+    bot.send_message(message.chat.id, 'У меня всё хорошо. \nА у тебя?')
     
-@bot.message_handler(commands=['meme'])
+@bot.message_handler(commands=['fine'])
 def main(message):
-    bot.send_message(message.chat.id, '*ТЫК*(https://youtu.be/dQw4w9WgXcQ?si=aJHvo7eFfa6OHYPx)', parse_mode='Markdown')
-
-@bot.message_handler(commands=['joke'])
+    bot.send_message(message.chat.id, 'Рад за тебя!')
+    
+@bot.message_handler(commands=['bedly'])
 def main(message):
-    bot.send_message(message.chat.id, 'Штирлиц шёл в Дрезден с трудом разбирая дорогу. \nНаутро железная дорога от Берлина до Дрездена была полностью разобрана...',)
-
-@bot.message_handler(commands=['song'])
+    bot.send_message(message.chat.id, 'Очень жаль...')
+    
+@bot.message_handler(commands=['over'])
 def main(message):
-    bot.send_message(message.chat.id, '*ТЫК*(https://youtu.be/boT7QIGOmbc?si=AC9VetUeUMHdFPDK)', parse_mode='Markdown')
-
+    bot.send_message(message.chat.id, '*Спасибо за общение!*', parse_mode='Markdown')
+    
 bot.infinity_polling()
