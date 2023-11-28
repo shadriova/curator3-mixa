@@ -1,21 +1,15 @@
 import telebot
+bot = telebot.TeleBot('6780228993:AAGz261WCaSZXz6RSyYV5ZjBnSVS2rVHwgs')
 
-banan = telebot.TeleBot("6859145466:AAEfzbtPJdcqfvv5p_MUGFmACi1DUQt0jQc")
-
-
-@banan.message_handler(commands=["start"])
+@bot.message_handler(commands=['start'])
 def main(message):
-    banan.send_message(message.chat.id, 'Артем краш')
+    bot.send_message(message.chat.id, 'НАЧАЛИ!', parse_mode='Markdown')
 
-
-@banan.message_handler(commands=["Да ?"])
+@bot.message_handler(commands=['hi'])
 def main(message):
-    banan.send_message(message.chat.id, '*А вы не верили* \n а я уверен в себе', parse_mode='Markdown')
+    bot.send_message(message.chat.id, 'Ну здорова!', parse_mode='Markdown')
 
-
-@banan.message_handler(commands=["Нет"])
+@bot.message_handler(commands=['goodbye'])
 def main(message):
-    banan.send_message(message.chat.id, 'я хотел сделать выбор Да либо Нет ')
-
-
-banan.infinity_polling()
+    bot.send_message(message.chat.id, '_Ну все, покеда._', parse_mode='Markdown')
+bot.infinity_polling()
