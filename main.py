@@ -1,19 +1,16 @@
 import telebot
-bot = telebot.TeleBot('6886487380:AAFSQR3nZYKF_6BjtMjA5OB5lMZ3RAqoNsQ')
+bot = telebot.TeleBot('6424481048:AAHAbiskuJtXC_PiCWzBHiNS8Gjq7A8_NxM')
+ 
+@bot.message_handler(commands=['/prediction1'])
+def main(message):
+    bot.send_message(message.chat.id, 'вам всегда будет светить солнце и ваши дни будут полны красок', parse_mode='Markdown')
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['/prediction2'])
 def main(message):
-    bot.send_message(message.chat.id, 'Привет,я могу немного рассказать о себе, если хотите узнать, введите /name')
+    bot.send_message(message.chat.id, 'сияние звезд озарит вам путь и укажет верное направление', parse_mode='Markdown')
 
-@bot.message_handler(commands=['name'])
+@bot.message_handler(commands=['/prediction3'])
 def main(message):
-    bot.send_message(message.chat.id, 'Мне 1 день, \nЯ был написан на языке Python \nБольше информации нету),Введите /run,если хотите узнать о языке Python.')
-                     
-@bot.message_handler(commands=['run'])
-def main(message):
-    bot.send_message(message.chat.id, 'Python можно описать одним предложением:Высокоуровневый, интерпретируемый, объектно-ориентированный, императивный, строго типизированный язык общего назначения, который имеет динамическую типизацию.')
+    bot.send_message(message.chat.id, 'для вас успех и слава, равносильно смене дня и ночи ', parse_mode='Markdown')
     
 bot.infinity_polling()
-
-    
-                     
